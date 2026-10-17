@@ -1,0 +1,14 @@
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: school_portal
+      POSTGRES_USER: school_portal
+      POSTGRES_PASSWORD: change-me-locally
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
